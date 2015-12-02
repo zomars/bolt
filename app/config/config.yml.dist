@@ -55,6 +55,12 @@ maintenance_template: maintenance_default.twig
 # Default: 3 (3 am)
 cron_hour: 3
 
+# By default Bolt inserts a <meta name="generator" content="Bolt"> for all
+# pages on the site.
+#
+# You can remove it by uncommentting the following line.
+#remove_generator: true
+
 # If your site is reachable under different urls (say, both blog.example.org/
 # as well as example.org/), it's a good idea to set one of these as the
 # canonical, so it's clear which is the primary address of the site.

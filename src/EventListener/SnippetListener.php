@@ -71,7 +71,9 @@ class SnippetListener implements EventSubscriberInterface
      */
     protected function addSnippets()
     {
-        $this->queue->add(Target::END_OF_HEAD, '<meta name="generator" content="Bolt">');
+        if ($this->config->get('general/remove_generator') !== true) {
+            $this->queue->add(Target::END_OF_HEAD, '<meta name="generator" content="Bolt">');
+        }
 
         if ($this->config->get('general/canonical')) {
             $canonical = $this->resources->getUrl('canonicalurl');
